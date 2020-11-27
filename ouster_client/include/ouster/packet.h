@@ -10,6 +10,7 @@
 #include <cstdint>
 #include <functional>
 #include <iterator>
+#include <iostream>
 
 #include "ouster/impl/packet_impl.h"
 #include "ouster/types.h"
@@ -54,6 +55,8 @@ constexpr packet_format packet__1_14_0__128 = impl::packet__1_14_0<128>();
  *          uint16_t reflectivity.
  * @param f callback when batching a scan is done, with one input argument
  *          std::chrono::nanoseconds scan_ts for timestamp of the start of s can
+ * @param min_range Minimum range of lidar points, range below is set to 0
+ * @param max_range Maximum range of lidar points, range above is set to 0
  * @return a function taking a lidar packet buffer and random-access iterator to
  * which data is added for every point in the scan.
  */
@@ -61,7 +64,7 @@ template <typename iterator_type, typename F, typename C>
 std::function<void(const uint8_t*, iterator_type it)> batch_to_iter(
     int w, const packet_format& pf,
     const typename std::iterator_traits<iterator_type>::value_type& empty,
-    C&& c, F&& f) {
+    C&& c, F&& f, uint32_t min_range = 0, uint32_t max_range = 55000) {
     int h = pf.pixels_per_column;
     int next_m_id{w};
     int32_t cur_f_id{-1};
@@ -106,9 +109,14 @@ std::function<void(const uint8_t*, iterator_type it)> batch_to_iter(
             for (uint8_t ipx = 0; ipx < h; ipx++) {
                 const uint8_t* px_buf = pf.nth_px(ipx, col_buf);
 
+                uint32_t range = pf.px_range(px_buf);
+                if (range < min_range || range > max_range) {
+                    range = 0;
+                }
+
                 // i, ts, reflectivity, ring, noise, range (mm)
                 it[idx + ipx] =
-                    c(ipx, m_id, ts, scan_ts, pf.px_range(px_buf),
+                    c(ipx, m_id, ts, scan_ts, range,
                       pf.px_signal_photons(px_buf), pf.px_noise_photons(px_buf),
                       pf.px_reflectivity(px_buf));
             }

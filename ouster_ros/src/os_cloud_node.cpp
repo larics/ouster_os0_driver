@@ -29,6 +29,10 @@ int main(int argc, char** argv) {
     ros::NodeHandle nh("~");
 
     auto tf_prefix = nh.param("tf_prefix", std::string{});
+    uint32_t min_range = 1000 * nh.param("min_range", 0.0);
+    uint32_t max_range = 1000 * nh.param("max_range", 55.0);
+    std::cout << "Got parameter [min_range] = " << min_range << "\n";
+    std::cout << "Got parameter [max_range] = " << max_range << "\n";
     if (!tf_prefix.empty() && tf_prefix.back() != '/') tf_prefix.append("/");
     auto sensor_frame = tf_prefix + "os_sensor";
     auto imu_frame = tf_prefix + "os_imu";
@@ -62,7 +66,7 @@ int main(int argc, char** argv) {
         [&](std::chrono::nanoseconds scan_ts) mutable {
             msg = ouster_ros::cloud_to_cloud_msg(cloud, scan_ts, lidar_frame);
             lidar_pub.publish(msg);
-        });
+        }, min_range, max_range);
 
     auto lidar_handler = [&](const PacketMsg& pm) mutable {
         batch_and_publish(pm.buf.data(), it);
