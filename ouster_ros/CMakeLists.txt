@@ -29,7 +29,7 @@ find_package(ouster_client REQUIRED)
 find_package(ouster_viz REQUIRED)
 
 # ==== Options ====
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 add_compile_options(-Wall -Wextra -Werror)
 
 # ==== Catkin ====
