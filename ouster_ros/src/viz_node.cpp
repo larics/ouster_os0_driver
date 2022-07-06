@@ -12,11 +12,11 @@
 #include <thread>
 #include <utility>
 
-#include "ouster/lidar_scan.h"
-#include "ouster/lidar_scan_viz.h"
-#include "ouster/packet.h"
-#include "ouster/point_viz.h"
-#include "ouster/types.h"
+#include "ouster_client/lidar_scan.h"
+#include "ouster_viz/lidar_scan_viz.h"
+#include "ouster_client/packet.h"
+#include "ouster_viz/point_viz.h"
+#include "ouster_client/types.h"
 #include "ouster_ros/OSConfigSrv.h"
 #include "ouster_ros/PacketMsg.h"
 #include "ouster_ros/ros.h"

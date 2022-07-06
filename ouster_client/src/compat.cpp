@@ -1,4 +1,4 @@
-#include "ouster/compat.h"
+#include "ouster_client/compat.h"
 
 #include <cstring>
 #include <iostream>

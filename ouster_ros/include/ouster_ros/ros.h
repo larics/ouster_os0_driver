@@ -13,8 +13,8 @@
 #include <chrono>
 #include <string>
 
-#include "ouster/client.h"
-#include "ouster/types.h"
+#include "ouster_client/client.h"
+#include "ouster_client/types.h"
 #include "ouster_ros/PacketMsg.h"
 #include "ouster_ros/point.h"
 

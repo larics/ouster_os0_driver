@@ -12,8 +12,8 @@
 #include <iterator>
 #include <iostream>
 
-#include "ouster/impl/packet_impl.h"
-#include "ouster/types.h"
+#include "ouster_client/impl/packet_impl.h"
+#include "ouster_client/types.h"
 
 namespace ouster {
 namespace sensor {

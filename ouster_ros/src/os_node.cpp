@@ -16,7 +16,7 @@
 #include <sstream>
 #include <string>
 
-#include "ouster/types.h"
+#include "ouster_client/types.h"
 #include "ouster_ros/OSConfigSrv.h"
 #include "ouster_ros/PacketMsg.h"
 #include "ouster_ros/ros.h"

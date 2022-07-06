@@ -41,7 +41,7 @@ endif()
 find_package(Eigen3 REQUIRED)
 
 catkin_package(
-  INCLUDE_DIRS include ${catkin_INCLUDE_DIRS}
+  INCLUDE_DIRS include
   LIBRARIES ouster_client
   CATKIN_DEPENDS
   DEPENDS
@@ -73,3 +73,6 @@ endif()
 add_executable(ouster_client_example src/main.cpp)
 target_link_libraries(ouster_client_example ouster_client)
 target_include_directories(ouster_client_example PRIVATE include)
+
+install(DIRECTORY include/${PROJECT_NAME}/
+        DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION})

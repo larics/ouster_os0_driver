@@ -2,7 +2,7 @@
 
 #include <json/json.h>
 
-#include "ouster/compat.h"
+#include "ouster_client/compat.h"
 #include "stdio.h"
 
 namespace ouster {

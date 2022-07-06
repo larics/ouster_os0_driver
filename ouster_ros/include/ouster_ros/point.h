@@ -12,7 +12,7 @@
 #include <functional>
 #include <cstdint>
 
-#include "ouster/lidar_scan.h"
+#include "ouster_client/lidar_scan.h"
 
 namespace ouster_ros {
 

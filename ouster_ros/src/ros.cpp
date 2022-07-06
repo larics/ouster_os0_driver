@@ -10,7 +10,7 @@
 #include <string>
 #include <vector>
 
-#include "ouster/types.h"
+#include "ouster_client/types.h"
 
 namespace ouster_ros {
 

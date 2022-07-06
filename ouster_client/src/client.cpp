@@ -1,4 +1,4 @@
-#include "ouster/client.h"
+#include "ouster_client/client.h"
 
 #include <json/json.h>
 
@@ -17,9 +17,9 @@
 #include <utility>
 #include <vector>
 
-#include "ouster/compat.h"
-#include "ouster/impl/client_impl.h"
-#include "ouster/types.h"
+#include "ouster_client/compat.h"
+#include "ouster_client/impl/client_impl.h"
+#include "ouster_client/types.h"
 
 namespace ouster {
 namespace sensor {

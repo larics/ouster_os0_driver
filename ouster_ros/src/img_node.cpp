@@ -22,10 +22,10 @@
 #include <thread>
 #include <vector>
 
-#include "ouster/autoexposure.h"
-#include "ouster/beam_uniformity.h"
-#include "ouster/client.h"
-#include "ouster/types.h"
+#include "ouster_viz/autoexposure.h"
+#include "ouster_viz/beam_uniformity.h"
+#include "ouster_client/client.h"
+#include "ouster_client/types.h"
 #include "ouster_ros/OSConfigSrv.h"
 #include "ouster_ros/ros.h"
 

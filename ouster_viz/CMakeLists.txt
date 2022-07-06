@@ -58,3 +58,6 @@ target_include_directories(ouster_viz SYSTEM PRIVATE ${EIGEN3_INCLUDE_DIR})
 #                      ${OUSTER_VIZ_ADDITIONAL_LIBS} ouster_viz ${catkin_LIBRARIES})
 #target_include_directories(simple_viz PRIVATE include ${catkin_INCLUDE_DIRS})
 #target_include_directories(simple_viz SYSTEM PRIVATE ${EIGEN3_INCLUDE_DIR})
+
+install(DIRECTORY include/${PROJECT_NAME}/
+        DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION})

@@ -14,13 +14,13 @@
 #include <thread>
 #include <vector>
 
-#include "ouster/client.h"
-#include "ouster/compat.h"
-#include "ouster/lidar_scan.h"
-#include "ouster/lidar_scan_viz.h"
-#include "ouster/packet.h"
-#include "ouster/point_viz.h"
-#include "ouster/types.h"
+#include "ouster_client/client.h"
+#include "ouster_client/compat.h"
+#include "ouster_client/lidar_scan.h"
+#include "ouster_client/lidar_scan_viz.h"
+#include "ouster_client/packet.h"
+#include "ouster_viz/point_viz.h"
+#include "ouster_client/types.h"
 
 namespace sensor = ouster::sensor;
 namespace viz = ouster::viz;

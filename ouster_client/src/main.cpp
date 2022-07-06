@@ -3,8 +3,8 @@
 #include <iomanip>
 #include <iostream>
 
-#include "ouster/client.h"
-#include "ouster/compat.h"
+#include "ouster_client/client.h"
+#include "ouster_client/compat.h"
 
 namespace sensor = ouster::sensor;
 

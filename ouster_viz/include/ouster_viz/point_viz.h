@@ -28,7 +28,7 @@
 
 #include <Eigen/Dense>
 #include <Eigen/Geometry>
-#include "ouster/colormaps.h"
+#include "ouster_viz/colormaps.h"
 
 namespace ouster {
 namespace viz {

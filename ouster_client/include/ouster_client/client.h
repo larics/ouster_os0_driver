@@ -9,8 +9,8 @@
 #include <memory>
 #include <string>
 
-#include "ouster/types.h"
-#include "ouster/version.h"
+#include "ouster_client/types.h"
+#include "ouster_client/version.h"
 
 namespace ouster {
 namespace sensor {

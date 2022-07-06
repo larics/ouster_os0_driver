@@ -1,5 +1,5 @@
 
-#include "ouster/point_viz.h"
+#include "ouster_viz/point_viz.h"
 
 namespace ouster {
 namespace viz {

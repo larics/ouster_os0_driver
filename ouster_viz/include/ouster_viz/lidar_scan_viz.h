@@ -4,11 +4,11 @@
  */
 
 #pragma once
-#include "ouster/autoexposure.h"
-#include "ouster/beam_uniformity.h"
-#include "ouster/lidar_scan.h"
-#include "ouster/point_viz.h"
-#include "ouster/types.h"
+#include "ouster_viz/autoexposure.h"
+#include "ouster_viz/beam_uniformity.h"
+#include "ouster_client/lidar_scan.h"
+#include "ouster_viz/point_viz.h"
+#include "ouster_client/types.h"
 
 namespace ouster {
 namespace viz {

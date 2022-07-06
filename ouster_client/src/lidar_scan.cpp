@@ -1,4 +1,4 @@
-#include "ouster/lidar_scan.h"
+#include "ouster_client/lidar_scan.h"
 
 #include <vector>
 

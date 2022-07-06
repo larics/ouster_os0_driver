@@ -1,4 +1,4 @@
-#include "ouster/point_viz.h"
+#include "ouster_viz/point_viz.h"
 #define EIGEN_DONT_ALIGN_STATICALLY
 #define EIGEN_DONT_ALIGN
 
