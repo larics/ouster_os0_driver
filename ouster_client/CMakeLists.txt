@@ -74,5 +74,13 @@ add_executable(ouster_client_example src/main.cpp)
 target_link_libraries(ouster_client_example ouster_client)
 target_include_directories(ouster_client_example PRIVATE include)
 
+
+# Mark executables and/or libraries for installation
+install(
+  TARGETS ouster_client
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+
 install(DIRECTORY include/${PROJECT_NAME}/
         DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION})
